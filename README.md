@@ -104,6 +104,13 @@ for set in datasets:
     a, b = linear_regression(v1, v2)
     print(f"y = {round(a, 3)}x + {round(b, 3)}, MSE = {round(avg_quadratic_error(v1, v2, a, b), 3)}")
 ```
+```
+>>> y = 0.5x + 3.0, MSE = 1.251
+>>> y = 0.449x + 3.29, MSE = 1.471
+>>> y = 0.518x + 2.925, MSE = 1.205
+>>> y = 0.518x + 2.665, MSE = 1.309
+```
+
 Voici une représentation graphique des datasets réalisée avec [matplotlib](https://matplotlib.org/) (code consultable dans [graph.py](/2026-03-10/graph.py)):
 
 On remarquera que le dataset 3 possède le MSE le plus proche de 0, et les points sont effectivement les plus proche de notre fonction affine de prédiléction. Les datasets comme 1 ou 2 on une valeur d'intercept perceptiblement supérieure à 0, et le dataset 4 possède trop peu de variété de points pour établir une prédiléction ou corrélation pertinente, comme on peut l'observer.
