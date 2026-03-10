@@ -73,10 +73,8 @@ def linear_regression(x: list[float], y: list[float]) -> tuple[float, float]:
 2. On calcule le **numérateur** et le **dénominateur** de la pente séparément, pour la lisibilité. Pour effectuer les sommes, on utilise une **generator expression** (équivalent à une boucle sur une seule ligne) qui itère sur le résultat de la fonction zip(x,y). Cette fonction permet de combiner nos listes en liste de tuples `[(x1,y1), (x2,y2), (x3,y3), ...]`
 
 3. On réutilise les moyennes pour déterminer l'ordonnée b et on return un tuple contenant les deux valeurs a et b.
-
-```
 à noter qu'on empêche également l'insertion de valeurs incompatibles (vecteurs de longeurs différentes ou dénominateur égal à 0)
-```
+
 
 On applique:
 
