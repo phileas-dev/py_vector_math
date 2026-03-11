@@ -193,7 +193,7 @@ print("w =", w)
 print("b =", b)
 ```
 
-les variables `lr`, `w`, `b`, et `iterations` ont été ajustées pour aligner les résultats le plus possible. On a notamment baissé le learning rate pour une courbe de loss plus précise, et changé l'ordonnée b pour correspondre au dataset.
+Les variables `lr`, `w`, `b`, et `iterations` ont été ajustées pour aligner les résultats le plus possible. On a notamment baissé le learning rate pour une courbe de loss plus précise, et changé l'ordonnée b pour correspondre au dataset.
 
 Voici la courbe de loss:
 
