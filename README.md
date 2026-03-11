@@ -124,9 +124,9 @@ On remarquera que le dataset 3 possède le MSE le plus proche de 0, et les point
 
 ## Analyse (J2)
 
-On reprend le dataset 3 qui est le plus pertinent. On va déterminer le modèle de prédiléction sous forme matricielle cette fois-ci.
+On reprend le dataset 3 qui est le plus pertinent. On va déterminer le modèle de prédiléction sous forme matricielle cette fois-ci, avec $y=Xθ$
 
-$y=Xθ$ avec $\theta = \begin{bmatrix} b \\ a \end{bmatrix}$
+$$\theta = \begin{bmatrix} b \\ a \end{bmatrix}$$
 
 $$\theta = (X^T X)^{-1} X^T y$$
 
