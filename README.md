@@ -156,3 +156,69 @@ print(f"biais b = {b}")
 On retrouve bien le même résultat qu'hier. La différence majeure ici est l'écriture de $θ$ qui représente une matrice de paramètres.
 
 ![dataset_3](/plots/dataset_3.png)
+
+---
+
+## TP
+
+Le script dans [day2.py](/2026-03-11/day2.py) pour calculer le gradient descent est le suivant:
+
+```py
+lr = 0.01
+iterations = 200
+w = 0
+b = min(zip(X, Y))[1]
+
+loss_history = []
+w_history = []
+b_history = []
+
+for i in range(iterations):
+    y_pred = w * X + b
+
+    loss = np.mean((Y - y_pred) ** 2)
+    loss_history.append(loss)
+
+    dw = (-2 / X.size) * np.sum(X * (Y - y_pred))
+    db = (-2 / X.size) * np.sum(Y - y_pred)
+
+    w = w - lr * dw
+    b = b - lr * db
+
+    w_history.append(w)
+    b_history.append(b)
+
+print("Gradient Descent")
+print("w =", w)
+print("b =", b)
+```
+
+les variables `lr`, `w`, `b`, et `iterations` ont été ajustées pour aligner les résultats le plus possible. On a notamment baissé le learning rate pour une courbe de loss plus précise, et changé l'ordonnée b pour correspondre au dataset.
+
+Voici la courbe de loss:
+
+![gradient descent loss curve](/plots/loss_curve.png)
+
+Elle est descendante donc elle converge.
+
+Le résultat approximé par la descente de gradient est représenté par la droite ci-dessous:
+
+![gradient descent](/plots/gradient_descent.png)
+
+Le script complet compare les 3 méthodes avec ce résultat:
+
+```
+Numpy régression linéaire
+pente a = 0.5182727272727278
+biais b = 2.9246363636363584
+
+Gradient Descent
+w = 0.3586633264524029
+b = 4.5365348170736715
+
+Scikit-learn
+coef = 0.5182727272727274
+intercept = 2.9246363636363633
+```
+
+L'implémentation scikit-learn est robuste mais aussi précise que notre régression linéaire précédente. En revanche, l'approche par descente de gradient est très sensible aux conditions initiales: un learning rate (="pas") trop élevé ou un nombre d'itérations trop extrême rend les résultats non-interprétables.
