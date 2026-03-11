@@ -113,7 +113,7 @@ for set in datasets:
 
 Voici une représentation graphique des datasets réalisée avec [matplotlib](https://matplotlib.org/) (code consultable dans [graph.py](/2026-03-10/graph.py)):
 
-On remarquera que le dataset 3 possède le MSE le plus proche de 0, et les points sont effectivement les plus proche de notre fonction affine de prédiléction. Les datasets comme 1 ou 2 on une valeur d'intercept perceptiblement supérieure à 0, et le dataset 4 possède trop peu de variété de points pour établir une prédiléction ou corrélation pertinente, comme on peut l'observer.
+On remarquera que le dataset 3 possède le MSE le plus proche de 0, et les points sont effectivement les plus proches de notre fonction affine de prédiléction. Les datasets comme 1 ou 2 on une valeur d'intercept perceptiblement supérieure à 0, et le dataset 4 possède trop peu de variété de points pour établir une prédiléction ou corrélation pertinente, comme on peut l'observer.
 
 ![dataset_1](/plots/dataset_1.png)
 ![dataset_2](/plots/dataset_2.png)
