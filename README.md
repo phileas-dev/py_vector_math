@@ -7,7 +7,7 @@
 - Régression linéaire
 - MSE
 
-## Analyse
+## Analyse (J1)
 
 Une fonction de prédiction paramétrée prend des **données en entrée** et produit une **prédiction en sortie**, avec des paramètres ajustables. Son rôle consiste à **modéliser une relation** entre 2 vecteurs $X$ et $Y$, puis de généraliser pour établir des projections.
 
@@ -119,3 +119,40 @@ On remarquera que le dataset 3 possède le MSE le plus proche de 0, et les point
 ![dataset_2](/plots/dataset_2.png)
 ![dataset_3](/plots/dataset_3.png)
 ![dataset_4](/plots/dataset_4.png)
+
+
+
+## Analyse (J2)
+
+On reprend le dataset 3 qui est le plus pertinent. On va déterminer le modèle de prédiléction sous forme matricielle cette fois-ci.
+
+$y=Xθ$ avec $\theta = \begin{bmatrix} b \\ a \end{bmatrix}$
+
+$$\theta = (X^T X)^{-1} X^T y$$
+
+où :
+- $X^T$ = transposée
+- $(X^T X)^{-1}$ = inverse de matrice
+
+On utilise numpy dans [day2.py](/2026-03-11/day2.py) comme ceci:
+
+```py
+X = np.array([10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0])
+Y = np.array([7.46, 6.77, 12.74, 7.11, 8.81, 8.84, 6.08, 5.39, 8.15, 6.40, 5.73])
+
+X_matrix = np.column_stack((np.ones(len(X)), X))
+theta = np.linalg.inv(X_matrix.T @ X_matrix) @ X_matrix.T @ Y
+b = theta[0]
+a = theta[1]
+
+print(f"pente a = {a}")
+print(f"biais b = {b}")
+```
+```
+>>> pente a = 0.5182727272727278
+>>> biais b = 2.9246363636363584
+```
+
+On retrouve bien le même résultat qu'hier. La différence majeure ici est l'écriture de $θ$ qui représente une matrice de paramètres.
+
+![dataset_3](/plots/dataset_3.png)
