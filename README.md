@@ -5,6 +5,7 @@
 - [TP Gradient Descent](#tp-gradient-descent)
 - [TP Extremum](/2026-03-11/extremum.md)
 - [L'ensemble des graphes](/plots/)
+- [TP Perceptron](#tp-perceptron)
 
 ## Analyse (J1)
 
@@ -221,3 +222,15 @@ intercept = 2.9246363636363633
 ```
 
 L'implémentation scikit-learn est robuste mais aussi précise que notre régression linéaire précédente. En revanche, l'approche par descente de gradient est très sensible aux conditions initiales: un learning rate (="pas") trop élevé ou un nombre d'itérations trop extrême rend les résultats non-interprétables.
+
+## TP Perceptron
+
+![frontière de décision](/plots/perceptron_training.gif)
+
+Le script est disponible [ici](/2026-03-11/perceptron.py).
+
+L’implémentation manuelle est idéale pour comprendre l’algorithme.
+sklearn est préférable pour applications réelles, grâce à l’optimisation, la robustesse et l’intégration avec d’autres outils ML.
+
+Le perceptron est un classifieur linéaire; il sépare les classes par une droite dans $ℝ²$.
+Or la fonction XOR possède des points qui ne sont pas linéairement séparables. Aucune droite ne peut séparer correctement les deux classes. Le perceptron ne **converge jamais** sur XOR.
