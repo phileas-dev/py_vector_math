@@ -1,11 +1,10 @@
 ## Sommaire
 
-[day1.py](/2026-03-10/day1.py) :
-- Somme de vecteurs
-- Produit scalaire
-- Produit matrice-vecteur
-- Régression linéaire
-- MSE
+- [Analyse Jour 1](#analyse-j1)
+- [Analyse Jour 2](#analyse-j2)
+- [TP Gradient Descent](#tp-gradient-descent)
+- [TP Extremum](/2026-03-11/extremum.md)
+- [L'ensemble des graphes](/plots/)
 
 ## Analyse (J1)
 
@@ -159,7 +158,7 @@ On retrouve bien le même résultat qu'hier. La différence majeure ici est l'é
 
 ---
 
-## TP
+## TP Gradient Descent
 
 Le script dans [day2.py](/2026-03-11/day2.py) pour calculer le gradient descent est le suivant:
 
